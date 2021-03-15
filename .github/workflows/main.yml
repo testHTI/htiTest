@@ -3,6 +3,10 @@
 name: CI
 
 # Controls when the action will run. 
+defaults:
+  run:
+    shell: bash
+    working-directory: /home/ec2-user
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -18,6 +22,10 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     steps:
-      - run: echo "Run your script here"
+      - name: firstTest
+        run: |
+          echo "A initial message"
+          echo pwd
+          echo "Another message or command"
     # The type of runner that the job will run on
     runs-on: self-hosted
