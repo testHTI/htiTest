@@ -20,4 +20,4 @@ jobs:
     steps:
       - run: echo "Run your script here"
     # The type of runner that the job will run on
-    runs-on: [self-hosted, linux, ARM64]
+    runs-on: self-hosted
