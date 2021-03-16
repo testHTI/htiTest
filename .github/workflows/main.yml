@@ -17,8 +17,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  nightly:
-    if: contains( github.ref, 'master')
+  nightly_develop:
+    if: github.ref == 'refs/heads/develop'
     steps:
       - name: firstTest
         run: |
@@ -28,7 +28,8 @@ jobs:
       - name: SecondTest
         run: echo "Second Test"
     runs-on: self-hosted
-  nightly_develop:
+  nightly:
+    if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop'
     steps:
       - name: build
         run: echo "main test"
