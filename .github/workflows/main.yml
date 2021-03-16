@@ -27,5 +27,7 @@ jobs:
           echo "A initial message"
           pwd
           echo "Another message or command"
+      - name: SecondTest
+        run: echo "Second Test"
     # The type of runner that the job will run on
     runs-on: self-hosted
