@@ -21,7 +21,9 @@ jobs:
     if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop'
     steps:
       - name: build
-        run: echo "main test"
+        run: ksh test.ksh
+      - name: test
+        run: echo "test action after action failure"
     # The type of runner that the job will run on
     runs-on: self-hosted
   nightly_develop:
