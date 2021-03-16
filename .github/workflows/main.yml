@@ -18,7 +18,14 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   nightly:
-    if: contains( github.ref, 'master')
+    if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop'
+    steps:
+      - name: build
+        run: echo "main test"
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+  nightly_develop:
+    if: github.ref == 'refs/heads/develop'
     steps:
       - name: firstTest
         run: |
@@ -28,9 +35,14 @@ jobs:
       - name: SecondTest
         run: echo "Second Test"
     runs-on: self-hosted
-  nightly_develop:
+  offcielle:
+    if: github.ref == 'refs/heads/master'
     steps:
-      - name: build
-        run: echo "main test"
-    # The type of runner that the job will run on
+      - name: Offcielle
+        run: |
+          echo "A initial message"
+          pwd
+          echo "Another message or command"
+      - name: pushCode
+        run: echo "pushCode"
     runs-on: self-hosted
