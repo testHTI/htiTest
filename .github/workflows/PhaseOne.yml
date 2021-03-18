@@ -8,7 +8,6 @@ defaults:
     shell: bash
     working-directory: /home/ec2-user
 on:
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
       description: 'Env deploy will run against'
