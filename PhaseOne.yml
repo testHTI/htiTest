@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Phase_One
 
 # Controls when the action will run. 
 defaults:
@@ -8,17 +8,17 @@ defaults:
     shell: bash
     working-directory: /home/ec2-user
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
+    inputs:
+      description: 'Env deploy will run against'
+      required: true
+      default: "SQE"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  nightly:
-    if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop'
+  phase_one:
+    if: github.ref == 'refs/heads/deploy'
     steps:
       - name: build
         run: ksh test.ksh
@@ -26,8 +26,8 @@ jobs:
         run: echo "test action after action failure"
     # The type of runner that the job will run on
     runs-on: self-hosted
-  nightly_develop:
-    if: github.ref == 'refs/heads/develop'
+  pushAMI:
+    if: github.ref == 'refs/heads/deploy'
     steps:
       - name: firstTest
         run: |
@@ -36,15 +36,4 @@ jobs:
           echo "Another message or command"
       - name: SecondTest
         run: echo "Second Test"
-    runs-on: self-hosted
-  offcielle:
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: Offcielle
-        run: |
-          echo "A initial message"
-          pwd
-          echo "Another message or command"
-      - name: pushCode
-        run: echo "pushCode"
     runs-on: self-hosted
