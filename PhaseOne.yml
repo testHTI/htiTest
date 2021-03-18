@@ -8,6 +8,9 @@ defaults:
     shell: bash
     working-directory: /home/ec2-user
 on:
+  push:
+    branches:
+      - develop
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
@@ -18,7 +21,6 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   phase_one:
-    if: github.ref == 'refs/heads/deploy'
     steps:
       - name: build
         run: ksh test.ksh
@@ -27,7 +29,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: self-hosted
   pushAMI:
-    if: github.ref == 'refs/heads/deploy'
     steps:
       - name: firstTest
         run: |
