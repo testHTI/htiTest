@@ -1,4 +1,7 @@
 ![build passing](https://badgen.net/badge/version/3.15.0/blue)
 ![build passing](https://badgen.net/badge/coverage/78.11%25/green)
-![build passing](/github/checks/:fourass/:htiTest/:develop?)
+[![Coverage Status][coveralls-src]][coveralls-href]
+
+[coveralls-src]: https://badgen.net/github/checks/testHTI/htiTest/develop
+
 # EDDI Backend
