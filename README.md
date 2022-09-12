@@ -4,9 +4,9 @@
 [![last-commit][commit]]
 [![topic-count][topic]]
 
-[coveralls-src]: https://badgen.net/github/checks/testHTI/htiTest/develop
+[coveralls-src]: https://badgen.net/github/checks/testHTI/htiTest/develop/
 
-[commit]: https://badgen.net/github/last-commit/testHTI/htiTest/develop
+[commit]: https://badgen.net/github/last-commit/testHTI/htiTest/develop/
 
-[topic]: https://badgen.net/github/tag/testHTI/htiTest
+[topic]: https://badgen.net/github/branches/testHTI/htiTest/
 # EDDI Backend
