@@ -13,6 +13,6 @@
 
 
 
-[npm-href]: https://github.com/testHTI/htiTest/branches
+[npm-href]: https://github.com/testHTI/htiTest/branches/
 [issue]: https://badgen.net/github/open-issues/testHTI/htiTest/
 # EDDI Backend
