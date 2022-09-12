@@ -13,5 +13,5 @@
 
 
 
-[issue]: https://badgen.net/github/issues/testHTI/htiTest
+[issue]: https://badgen.net/github/open-issues/testHTI/htiTest/
 # EDDI Backend
