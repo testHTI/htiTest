@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Phase_One
+
+# Controls when the action will run. 
+defaults:
+  run:
+    shell: bash
+    working-directory: /home/ec2-user
+on:
+  workflow_dispatch:
+    inputs:
+      description: 'Env deploy will run against'
+      required: true
+      default: "SQE"
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  phase_one:
+    if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop'
+    steps:
+      - name: build
+        run: ksh test.ksh
+      - name: test
+        run: echo "test action after action failure"
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+  pushAMI:
+    if: github.ref != 'refs/heads/master' && github.ref != 'refs/heads/develop' 
+    steps:
+      - name: firstTest
+        run: |
+          echo "A initial message"
+          pwd
+          echo "Another message or command"
+      - name: SecondTest
+        run: echo "Second Test"
+    runs-on: self-hosted
