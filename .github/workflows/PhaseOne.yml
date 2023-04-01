@@ -10,11 +10,12 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  runs-on: ubuntu-latest
-  steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-      - name: Check github branch name
-        run: echo this is var ${{ github.repository.ref_name }}
+  vars_name:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Dump GitHub context
+          env:
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+        - name: Check github branch name
+          run: echo this is var ${{ github.repository.ref_name }}
   
