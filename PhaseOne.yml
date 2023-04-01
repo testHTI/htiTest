@@ -2,11 +2,6 @@
 
 name: Phase_One
 
-# Controls when the action will run. 
-defaults:
-  run:
-    shell: bash
-    working-directory: /home/ec2-user
 on:
   push:
     branche:
