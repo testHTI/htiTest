@@ -13,9 +13,6 @@ jobs:
   vars_name:
     runs-on: ubuntu-latest
     steps:
-        - name: Dump GitHub context
-          env:
-            GITHUB_CONTEXT: ${{ toJson(github) }}
         - name: Check github branch name
           run: echo this is var ${{ github.repository.ref_name }}
   
