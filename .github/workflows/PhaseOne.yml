@@ -13,8 +13,8 @@ jobs:
   vars_name:
     runs-on: ubuntu-latest
     steps:
-        - name: Check github branch name
-          env:
-            branch_name: ${{ github.ref_name }}
-          run: echo this is var $branch_name and ${{ github.ref_name }}
-  
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18
+        - uses: nrwl/nx-set-shas@v3.3.2
+    
