@@ -12,11 +12,11 @@ jobs:
   # This workflow contains a single job called "build"
   vars_name:
     runs-on: ubuntu-latest
-    container:
-      image: sanofi-docker-iadc-local.jfrog.io/foundation/cicd-docker:v20.10.15
-      credentials:
-        username: ${{secrets.DOCKER_CONTAINER_REGISTRY_USERNAME}}
-        password: ${{secrets.DOCKER_CONTAINER_REGISTRY_TOKEN}}
+    # container:
+    #   image: sanofi-docker-iadc-local.jfrog.io/foundation/cicd-docker:v20.10.15
+    #   credentials:
+    #     username: ${{secrets.DOCKER_CONTAINER_REGISTRY_USERNAME}}
+    #     password: ${{secrets.DOCKER_CONTAINER_REGISTRY_TOKEN}}
     steps:
         # - uses: actions/setup-node@v3
         #   with:
